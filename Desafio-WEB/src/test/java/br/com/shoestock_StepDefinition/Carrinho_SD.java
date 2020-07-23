@@ -9,7 +9,7 @@ import br.com.shoestock_PageObject.DetalhesDoProduto_PO;
 import br.com.shoestock_PageObject.ResultadoDaPesquisa_PO;
 import br.com.shoestock_RunTest.Pesquisa_RunTest;
 import io.cucumber.java.pt.Dado;
-import io.cucumber.java.pt.Então;
+import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 
 public class Carrinho_SD extends base_SD {
@@ -50,7 +50,7 @@ public class Carrinho_SD extends base_SD {
 		detalhesDoProduto.clicarEmComprar();
 	}
 
-	@Então("sou levado para a tela do meu carrinho contendo o produto previamente selecionado")
+	@Entao("sou levado para a tela do meu carrinho contendo o produto previamente selecionado")
 	public void sou_levado_para_a_tela_do_meu_carrinho_contendo_o_produto_previamente_selecionado() {
 		// Write code here that turns the phrase above into concrete actions throw new
 		// io.cucumber.java.PendingException();
@@ -61,7 +61,7 @@ public class Carrinho_SD extends base_SD {
 		assertTrue(carrinhoPO.codigoDoProduto().contains(codigoDoProduto));
 		assertTrue(carrinhoPO.precoDoProduto().contains(precoDoProduto));
 		assertTrue(carrinhoPO.descricaoDoProduto().contains(descricaoDoProduto));
-		
+
 		System.out.println(detalhesDoProduto.getDescricao());
 	}
 }

@@ -8,4 +8,4 @@ Funcionalidade: Carrinho
   Cenario: adicionar produto pesquisado no carrinho
     Dado clico em um produto na tela de resultado de pesquisa
     Quando clico em no botao comprar
-    Então sou levado para a tela do meu carrinho contendo o produto previamente selecionado
+    Entao sou levado para a tela do meu carrinho contendo o produto previamente selecionado
