@@ -37,7 +37,7 @@ public class Conferencia_SD extends base_SD {
 		// Write code here that turns the phrase above into concrete actions throw new
 		// io.cucumber.java.PendingException();
 		
-		pesquisaPO.pesquisarNaBarra("bolsa").selecionarProdutoAleatorio().clicarEmComprar();
+		new Pesquisa_PO(driver).pesquisarNaBarra("bolsa").selecionarProdutoAleatorio().clicarEmComprar();
 	}
 
 	@Dado("que clico no botao CONTINUAR")
