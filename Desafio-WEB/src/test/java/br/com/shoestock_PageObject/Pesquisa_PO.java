@@ -19,4 +19,11 @@ public class Pesquisa_PO extends MenuSuperior_EM {
 		return new ResultadoDaPesquisa_PO(driver);
 	}
 
+	public Pesquisa_PO paginaInicial() {
+		if (driver.getCurrentUrl() != "https://www.shoestock.com.br/") {
+			driver.get("https://www.shoestock.com.br/");
+		}
+		return this;
+	}
+
 }

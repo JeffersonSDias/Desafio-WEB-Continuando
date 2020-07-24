@@ -1,10 +1,10 @@
 #language:pt
 Funcionalidade: Conferencia
 
-  Contexto: Usuario deve ter pesquisado o produto e o adicionado no carrinho
-    Dado que estou na tela do meu carrinho contendo o produto previamente selecionado
+  Contexto: 
+    Dado Possuo produto no carrinho
 
-@Conferencia
+  @Conferencia
   Esquema do Cenario: Validar produto na tela de pagamento
     Dado que clico no botao CONTINUAR
     Quando na proxima tela realizo login com "<cpf>" e "<senha>"

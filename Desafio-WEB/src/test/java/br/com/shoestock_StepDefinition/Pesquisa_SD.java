@@ -5,7 +5,6 @@ import static org.junit.Assert.assertTrue;
 import br.com.shoestock_PageObject.Pesquisa_PO;
 import br.com.shoestock_PageObject.ResultadoDaPesquisa_PO;
 import io.cucumber.java.After;
-import io.cucumber.java.Scenario;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
@@ -20,8 +19,9 @@ public class Pesquisa_SD extends base_SD {
 		resultadoDaPesquisa = new ResultadoDaPesquisa_PO(driver);
 	}
 
-	@After(value = "@Conferencia")
-	public void tearDown(Scenario scenario) {
+	@After
+	public void tearDown() {
+
 		encerrarDriver();
 	}
 

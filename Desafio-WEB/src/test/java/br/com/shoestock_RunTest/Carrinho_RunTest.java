@@ -8,9 +8,9 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/features/Carrinho.feature", 
 				 glue = "classpath:br.com.shoestock_StepDefinition",
-				 dryRun = false,
-				 monochrome = true,
-				 plugin = {"pretty","html:target/Carrinho.html"}
+						 dryRun = false,
+						 monochrome = true,
+						 plugin = {"pretty","html:target/Carrinho.html"}
 )
 
 public class Carrinho_RunTest {

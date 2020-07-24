@@ -6,14 +6,14 @@ import org.junit.runner.JUnitCore;
 
 import br.com.shoestock_PageObject.Carrinho_PO;
 import br.com.shoestock_PageObject.DetalhesDoProduto_PO;
+import br.com.shoestock_PageObject.Pesquisa_PO;
 import br.com.shoestock_PageObject.ResultadoDaPesquisa_PO;
-import br.com.shoestock_RunTest.Pesquisa_RunTest;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 
 public class Carrinho_SD extends base_SD {
-	private JUnitCore jUnitCore;
+	private Pesquisa_PO pesquisaPO;
 	private Carrinho_PO carrinhoPO;
 	private DetalhesDoProduto_PO detalhesDoProduto;
 	private String codigoDoProduto;
@@ -23,17 +23,19 @@ public class Carrinho_SD extends base_SD {
 
 	public Carrinho_SD() {
 		driver = carregarDriver();
-		jUnitCore = new JUnitCore();
+
 		carrinhoPO = new Carrinho_PO(driver);
 		detalhesDoProduto = new DetalhesDoProduto_PO(driver);
 		resultadoDaPesquisa = new ResultadoDaPesquisa_PO(driver);
+		pesquisaPO = new Pesquisa_PO(driver);
 	}
 
 	@Dado("que estou na tela de resultado de pesquisa")
 	public void que_estou_na_tela_de_resultado_de_pesquisa() {
 		// Write code here that turns the phrase above into concrete actions throw new
 		// io.cucumber.java.PendingException();
-		jUnitCore.run(Pesquisa_RunTest.class);
+	pesquisaPO.pesquisarNaBarra("bolsa");
+		
 	}
 
 	@Dado("clico em um produto na tela de resultado de pesquisa")

@@ -8,7 +8,7 @@ import br.com.shoestock_PageObject.Carrinho_PO;
 import br.com.shoestock_PageObject.Conferencia_PO;
 import br.com.shoestock_PageObject.DetalhesDoProduto_PO;
 import br.com.shoestock_PageObject.Login_PO;
-import br.com.shoestock_RunTest.Carrinho_RunTest;
+import br.com.shoestock_PageObject.Pesquisa_PO;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
@@ -20,6 +20,7 @@ public class Conferencia_SD extends base_SD {
 	private Login_PO loginPO;
 	private Conferencia_PO conferenciaPO;
 	private DetalhesDoProduto_PO detalhesDoProdutoPO;
+	private Pesquisa_PO pesquisaPO;
 
 	public Conferencia_SD() {
 		driver = carregarDriver();
@@ -28,12 +29,15 @@ public class Conferencia_SD extends base_SD {
 		loginPO = new Login_PO(driver);
 		conferenciaPO = new Conferencia_PO(driver);
 		detalhesDoProdutoPO = new DetalhesDoProduto_PO(driver);
+		pesquisaPO = new Pesquisa_PO(driver);
 	}
 
-	@Dado("que estou na tela do meu carrinho contendo o produto previamente selecionado")
-	public void que_estou_na_tela_do_meu_carrinho_contendo_o_produto_previamente_selecionado() {
-
-		jUnitCore.run(Carrinho_RunTest.class);
+	@Dado("Possuo produto no carrinho")
+	public void possuo_produto_no_carrinho() {
+		// Write code here that turns the phrase above into concrete actions throw new
+		// io.cucumber.java.PendingException();
+		
+		pesquisaPO.pesquisarNaBarra("bolsa").selecionarProdutoAleatorio().clicarEmComprar();
 	}
 
 	@Dado("que clico no botao CONTINUAR")
