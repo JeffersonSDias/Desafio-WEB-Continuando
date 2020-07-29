@@ -14,9 +14,13 @@ public class DriverManager {
 	private static String url = "https://www.shoestock.com.br/";
 
 	public WebDriver iniciarDriver() {
+
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/Drivers/chromedriver.exe");
 
-		//chromeOptions.addArguments("--headless");
+		// chromeOptions.addArguments("--headless");
+		chromeOptions.addArguments("--no-sandbox");
+		chromeOptions.addArguments("--disable-dev-shm-usage");
+		chromeOptions.addArguments("--headless");
 		driver = new ChromeDriver(chromeOptions);
 
 		driver.get(url);
