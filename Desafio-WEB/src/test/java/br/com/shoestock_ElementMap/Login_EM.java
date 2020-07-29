@@ -5,7 +5,10 @@ import org.openqa.selenium.support.FindBy;
 
 public class Login_EM {
 
-	@FindBy(id = "username")
+//	@FindBy(id = "username")
+//	protected WebElement txt_username;
+	
+	@FindBy(name = "username")
 	protected WebElement txt_username;
 
 	@FindBy(id = "password")
