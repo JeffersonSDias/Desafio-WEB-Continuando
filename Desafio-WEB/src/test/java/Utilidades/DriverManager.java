@@ -3,18 +3,21 @@ package Utilidades;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
 
 public class DriverManager {
 	private WebDriver driver;
 	EdgeOptions edgeOptions = new EdgeOptions();
+	private ChromeOptions chromeOptions = new ChromeOptions();
 	private static String url = "https://www.shoestock.com.br/";
 
 	public WebDriver iniciarDriver() {
-		System.setProperty("webdriver.edge.driver", "src/test/resources/Drivers/msedgedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "src/test/resources/Drivers/chromedriver.exe");
 
-		driver = new EdgeDriver();
+		//chromeOptions.addArguments("--headless");
+		driver = new ChromeDriver(chromeOptions);
 
 		driver.get(url);
 		driver.manage().window().maximize();
