@@ -59,7 +59,7 @@ public class Carrinho_SD extends base_SD {
 		codigoDoProduto = detalhesDoProduto.getCodigo();
 		descricaoDoProduto = detalhesDoProduto.getDescricao();
 		precoDoProduto = detalhesDoProduto.getPreco();
-
+System.out.println(carrinhoPO.codigoDoProduto());
 		assertTrue(carrinhoPO.codigoDoProduto().contains(codigoDoProduto));
 		assertTrue(carrinhoPO.precoDoProduto().contains(precoDoProduto));
 		assertTrue(carrinhoPO.descricaoDoProduto().contains(descricaoDoProduto));
