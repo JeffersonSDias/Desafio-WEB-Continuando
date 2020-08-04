@@ -32,38 +32,32 @@ public class Carrinho_SD extends base_SD {
 
 	@Dado("que estou na tela de resultado de pesquisa")
 	public void que_estou_na_tela_de_resultado_de_pesquisa() {
-		// Write code here that turns the phrase above into concrete actions throw new
-		// io.cucumber.java.PendingException();
+
 	pesquisaPO.pesquisarNaBarra("bolsa");
 		
 	}
 
 	@Dado("clico em um produto na tela de resultado de pesquisa")
 	public void clico_em_um_produto_na_tela_de_resultado_de_pesquisa() {
-		// Write code here that turns the phrase above into concrete actions throw new
-		// io.cucumber.java.PendingException();
+
 		resultadoDaPesquisa.selecionarProdutoAleatorio();
 	}
 
 	@Quando("clico em no botao comprar")
 	public void clico_em_no_botao_comprar() {
-		// Write code here that turns the phrase above into concrete actions throw new
-		// io.cucumber.java.PendingException();
+
 		detalhesDoProduto.clicarEmComprar();
 	}
 
 	@Entao("sou levado para a tela do meu carrinho contendo o produto previamente selecionado")
 	public void sou_levado_para_a_tela_do_meu_carrinho_contendo_o_produto_previamente_selecionado() {
-		// Write code here that turns the phrase above into concrete actions throw new
-		// io.cucumber.java.PendingException();
+
 		codigoDoProduto = detalhesDoProduto.getCodigo();
 		descricaoDoProduto = detalhesDoProduto.getDescricao();
 		precoDoProduto = detalhesDoProduto.getPreco();
-System.out.println(carrinhoPO.codigoDoProduto());
+		
 		assertTrue(carrinhoPO.codigoDoProduto().contains(codigoDoProduto));
 		assertTrue(carrinhoPO.precoDoProduto().contains(precoDoProduto));
 		assertTrue(carrinhoPO.descricaoDoProduto().contains(descricaoDoProduto));
-
-		System.out.println(detalhesDoProduto.getDescricao());
 	}
 }

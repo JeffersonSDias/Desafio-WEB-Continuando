@@ -29,13 +29,10 @@ public class Pesquisa_SD extends base_SD {
 	public void que_estou_na_tela_inicial_do_site() {
 		// Write code here that turns the phrase above into concrete actions throw new
 		// io.cucumber.java.PendingException();
-
 	}
 
 	@Quando("pesquiso por uma {string} na barra de pesquisa")
 	public void pesquiso_por_uma_na_barra_de_pesquisa(String categoria) {
-		// Write code here that turns the phrase above into concrete actions throw new
-		// io.cucumber.java.PendingException();
 
 		pesquisaPO.pesquisarNaBarra(categoria);
 
@@ -43,8 +40,7 @@ public class Pesquisa_SD extends base_SD {
 
 	@Entao("e exibido uma pagina contendo os produtos da {string} pesquisada")
 	public void e_exibido_uma_pagina_contendo_os_produtos_da_pesquisada(String categoria) {
-		// Write code here that turns the phrase above into concrete actions throw new
-		// io.cucumber.java.PendingException();
+
 		categoria = categoria.toUpperCase();
 		String tituloDaPagina = (String) resultadoDaPesquisa.tituloDaPaginaDeResultados();
 

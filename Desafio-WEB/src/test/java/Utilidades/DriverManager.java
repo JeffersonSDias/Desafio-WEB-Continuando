@@ -16,11 +16,6 @@ public class DriverManager {
 
 	public WebDriver iniciarDriver() {
 
-		// System.setProperty("webdriver.chrome.driver",
-		// "src/test/resources/Drivers/chromedriver.exe");
-
-		// chromeOptions.addArguments("--headless");
-
 		WebDriverManager.chromedriver().setup();
 		chromeOptions.addArguments("--no-sandbox");
 		chromeOptions.addArguments("--disable-dev-shm-usage");
@@ -41,16 +36,3 @@ public class DriverManager {
 
 	}
 }
-
-//<build>
-//<finalName>maven-unit-test</finalName>
-//<plugins>
-//
-//	<plugin>
-//		<groupId>org.apache.maven.plugins</groupId>
-//		<artifactId>maven-surefire-plugin</artifactId>
-//		<version>2.22.0</version>
-//	</plugin>
-//
-//</plugins>
-//</build>

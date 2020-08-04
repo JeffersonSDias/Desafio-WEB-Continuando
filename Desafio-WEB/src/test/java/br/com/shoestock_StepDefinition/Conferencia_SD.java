@@ -34,9 +34,7 @@ public class Conferencia_SD extends base_SD {
 
 	@Dado("Possuo produto no carrinho")
 	public void possuo_produto_no_carrinho() {
-		// Write code here that turns the phrase above into concrete actions throw new
-		// io.cucumber.java.PendingException();
-		
+
 		new Pesquisa_PO(driver).pesquisarNaBarra("bolsa").selecionarProdutoAleatorio().clicarEmComprar();
 	}
 
@@ -54,6 +52,7 @@ public class Conferencia_SD extends base_SD {
 
 	@Entao("sou levado para a tela de checkout onde posso validar que o produto foi inserido corretamente no pedido")
 	public void sou_levado_para_a_tela_de_checkout_onde_posso_validar_que_o_produto_foi_inserido_corretamente_no_pedido() {
+		
 		int quantidadeDeProdutosNoCarrinho = conferenciaPO.produtosNoCarrinho().size();
 		int quantidadeDeProdutosNoPedido = conferenciaPO.produtosNoPedido().size();
 
