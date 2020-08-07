@@ -4,13 +4,18 @@ import java.util.List;
 import java.util.Random;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import br.com.shoestock_ElementMap.ResultadoDaPesquisa_EM;
 
-public class ResultadoDaPesquisa_PO extends ResultadoDaPesquisa_EM {
+public class ResultadoDaPesquisa_PO extends ResultadoDaPesquisa_EM{
 	private WebDriver driver;
 	private Random numeroRandomico = new Random();
 	int numeroDeProdutos;
@@ -22,8 +27,9 @@ public class ResultadoDaPesquisa_PO extends ResultadoDaPesquisa_EM {
 		PageFactory.initElements(driver, this);
 	}
 
+	
 	public String tituloDaPaginaDeResultados() {
-		return tituloDaPaginaDeResultado.getText();
+		return tituloDaPaginaDeResultado.getAttribute("innerText");
 
 	}
 
@@ -36,4 +42,7 @@ public class ResultadoDaPesquisa_PO extends ResultadoDaPesquisa_EM {
 
 		return new DetalhesDoProduto_PO(driver);
 	}
+	
+	
+
 }

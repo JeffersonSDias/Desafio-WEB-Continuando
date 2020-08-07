@@ -2,9 +2,16 @@ package br.com.shoestock_StepDefinition;
 
 import static org.junit.Assert.assertTrue;
 
+import java.io.IOException;
+
+import com.aventstack.extentreports.ExtentTest;
+
+import Utilidades.ReportManager;
 import br.com.shoestock_PageObject.Pesquisa_PO;
 import br.com.shoestock_PageObject.ResultadoDaPesquisa_PO;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
@@ -13,14 +20,24 @@ public class Pesquisa_SD extends base_SD {
 	private Pesquisa_PO pesquisaPO;
 	private ResultadoDaPesquisa_PO resultadoDaPesquisa;
 
+	private ExtentTest extentTest;
+
+	private ReportManager reportManager;
+
 	public Pesquisa_SD() {
 		driver = carregarDriver();
 		pesquisaPO = new Pesquisa_PO(driver);
 		resultadoDaPesquisa = new ResultadoDaPesquisa_PO(driver);
 	}
 
+	@Before
+	public void setUp(Scenario scenariof) {
+		extentTest = reportManager.criarTest(scenariof.getName());
+	}
+
 	@After
-	public void tearDown() {
+	public void tearDown(Scenario scenariof) {
+		reportManager.statusReported(extentTest, scenariof, driver);
 
 		encerrarDriver();
 	}

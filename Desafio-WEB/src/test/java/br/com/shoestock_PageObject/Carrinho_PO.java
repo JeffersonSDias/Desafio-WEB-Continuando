@@ -20,14 +20,14 @@ public class Carrinho_PO extends Carrinho_EM {
 	}
 
 	public String precoDoProduto() {
-		return labelPrecoDoProduto.getText();
+		return labelPrecoDoProduto.getAttribute("innerText");
 	}
 
 	public String codigoDoProduto() {
-		return labelCodigoDoProduto.getText();
+		return labelCodigoDoProduto.getAttribute("innerText");
 	}
 
 	public String descricaoDoProduto() {
-		return labelNomeDoProduto.getText();
+		return labelNomeDoProduto.getAttribute("innerText");
 	}
 }
