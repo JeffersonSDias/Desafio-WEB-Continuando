@@ -24,7 +24,8 @@ public class ReportManager {
 	public static Scenario scenario;
 
 	public static void iniciarExtent() {
-		sparkReporter = new ExtentSparkReporter("./report/reportTestes.html");
+//		sparkReporter = new ExtentSparkReporter("./report/reportTestes.html");
+		sparkReporter = new ExtentSparkReporter("../reportTestes.html");
 
 		sparkReporter.config().setDocumentTitle("Report");
 		sparkReporter.config().setReportName("Report");
