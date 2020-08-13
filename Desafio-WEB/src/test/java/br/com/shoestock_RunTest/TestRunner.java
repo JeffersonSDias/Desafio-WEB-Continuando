@@ -13,7 +13,7 @@ import io.cucumber.junit.CucumberOptions;
                  glue = "classpath:br.com.shoestock_StepDefinition", 
                  dryRun = false, 
                  monochrome = true, 
-                 plugin = {"pretty"},tags="@Pesquisa"
+                 plugin = {"pretty"},
                  )
 
 public class TestRunner {
