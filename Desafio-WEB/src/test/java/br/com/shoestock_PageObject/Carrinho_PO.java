@@ -20,6 +20,7 @@ public class Carrinho_PO extends Carrinho_EM {
 	}
 
 	public String precoDoProduto() {
+
 		return labelPrecoDoProduto.getAttribute("innerText");
 	}
 

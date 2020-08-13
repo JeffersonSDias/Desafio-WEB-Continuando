@@ -18,16 +18,16 @@ public class DetalhesDoProduto_PO extends DetalhesDoProduto_EM {
 	}
 
 	public Carrinho_PO clicarEmComprar() {
-//		dadosDoProduto();
+		dadosDoProduto();
 		btn_Comprar.click();
 		return new Carrinho_PO(driver);
 
 	}
 
 	public DetalhesDoProduto_PO dadosDoProduto() {
-		setCodigo(labelComCodigo.getAttribute("innerHTML"));
-		setDescricao(labelComDescricao.getAttribute("innerHTML"));
-		setPreco(labelComPreco.getAttribute("innerHTML"));
+		setCodigo(labelComCodigo.getAttribute("innerText"));
+		setDescricao(labelComDescricao.getAttribute("innerText"));
+		setPreco(labelComPreco.getAttribute("innerText"));
 		return this;
 	}
 

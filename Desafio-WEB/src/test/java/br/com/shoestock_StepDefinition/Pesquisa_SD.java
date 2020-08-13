@@ -2,8 +2,6 @@ package br.com.shoestock_StepDefinition;
 
 import static org.junit.Assert.assertTrue;
 
-import java.io.IOException;
-
 import com.aventstack.extentreports.ExtentTest;
 
 import Utilidades.ReportManager;
@@ -11,10 +9,12 @@ import br.com.shoestock_PageObject.Pesquisa_PO;
 import br.com.shoestock_PageObject.ResultadoDaPesquisa_PO;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeStep;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
+import junit.framework.TestResult;
 
 public class Pesquisa_SD extends base_SD {
 	private Pesquisa_PO pesquisaPO;

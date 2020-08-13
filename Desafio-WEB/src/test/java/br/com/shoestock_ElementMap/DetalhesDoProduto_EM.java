@@ -8,7 +8,7 @@ public class DetalhesDoProduto_EM {
 	@FindBy(id = "buy-button-now")
 	protected WebElement btn_Comprar;
 
-	@FindBy(xpath = "//div[@class='default-price']//following::strong[@itemprop='price']")
+	@FindBy(xpath = "//div[@class='default-price']/span/strong")
 	protected WebElement labelComPreco;
 
 	@FindBy(xpath = "//section[@class='short-description']//following::h1[@itemprop='name']")
